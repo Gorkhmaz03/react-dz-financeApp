@@ -1,14 +1,17 @@
-const initialState = [];
+import { createSlice } from "@reduxjs/toolkit";
 
-const transactionReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "ADD_TRANSACTION":
-      return [...state, action.payload];
-    case "DELETE_TRANSACTION":
+const transactionSlice = createSlice({
+  name: "transactions",
+  initialState: [],
+  reducers: {
+    addTransaction: (state, action) => {
+      state.push(action.payload);
+    },
+    deleteTransaction: (state, action) => {
       return state.filter((transaction) => transaction.id !== action.payload);
-    default:
-      return state;
-  }
-};
+    },
+  },
+});
 
-export default transactionReducer;
+export const { addTransaction, deleteTransaction } = transactionSlice.actions;
+export default transactionSlice.reducer;

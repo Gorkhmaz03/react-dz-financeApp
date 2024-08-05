@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTransaction } from "../redux/actions/transactionActions";
+import { addTransaction } from "../redux/reducers/transactionReducer";
 import styled from "styled-components";
 
 const Form = styled.form`

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTransaction } from "../redux/actions/transactionActions";
+import { deleteTransaction } from "../redux/reducers/transactionReducer";
 import styled from "styled-components";
 
 const List = styled.ul`
